@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="calc">
+            <article class="eq-wrap">
+                <div class="wrap-top">
+                    <h3 id="mem"></h3>
+                </div>
+
+                <div class="wrap">
+                    <h2 id="output">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="btns">
+                <div class="row">
+                    <button class="tr" onclick="valueSet('rem');">
+                        <img src="./imgs/rem.png" alt="" srcset="">
+                    </button>
+                    <button onclick="valueSet('clear');" class="tr" id="clr">AC</button>
+                    <button class="tr" onclick="valueSet('perc');">%</button>
+                    <button class="symb" onclick="valueSet('div');">÷</button>
+                </div>
+
+                <div class="row">
+                    <button onclick="valueSet('7');">7</button>
+                    <button onclick="valueSet('8');">8</button>
+                    <button onclick="valueSet('9');">9</button>
+                    <button class="symb" onclick="valueSet('x');">x</button>
+                </div>
+
+                <div class="row">
+                    <button onclick="valueSet('4');">4</button>
+                    <button onclick="valueSet('5');">5</button>
+                    <button onclick="valueSet('6');">6</button>
+                    <button class="symb" onclick="valueSet('-');">-</button>
+                </div>
+
+                <div class="row">
+                    <button onclick="valueSet('1');">1</button>
+                    <button onclick="valueSet('2');">2</button>
+                    <button onclick="valueSet('3');">3</button>
+                    <button class="symb" onclick="valueSet('+');">+</button>
+                </div>
+
+                <div class="row">
+                    <button onclick="valueSet('plmn');">
+                        <img class="plmi" src="./imgs/+-.png" alt="">
+                    </button>
+                    <button onclick="valueSet('0');">0</button>
+                    <button onclick="valueSet('.');">.</button>
+                    <button class="symb" onclick="valueSet('equals');">=</button>
+                </div>
+                
+            </article>
+        </div>
+    </main>
+
+    <script src="./scripts/script.js"></script>
+    <script>
+        function fitText(el, max = 4, min = 1.5) {
+            let size = max;
+            el.style.fontSize = size + "rem";
+
+            while (el.scrollWidth > el.clientWidth && size > min) {
+                size -= 0.1;
+                el.style.fontSize = size + "rem";
+            }
+        }
+    </script>
+</body>
+</html>
