@@ -6,6 +6,15 @@ const clear_btn = document.getElementById("clr");
 let is_minus = false;
 
 
+function formatNum(num) {
+    if (!isFinite(num)) {
+        return num;
+    }
+
+    return Number(Number(num).toPrecision(5));
+}
+
+
 function equals(out, memor) {
     let raw_eq = memor + out;
     let raw_eq_elms = raw_eq.match(/-?\d+(\.\d+)?|[+\-x÷]/g);
@@ -20,16 +29,17 @@ function equals(out, memor) {
                 eq += "/";
                 break;
             default:
-                if (!isNaN(raw_eq_elms[i]) || ["+", "-"].includes(raw_eq_elms)) {
+                if (!isNaN(raw_eq_elms[i]) || ["+", "-"].includes(raw_eq_elms[i])) {
                     eq += raw_eq_elms[i];
                 }
                 break;
-                    
         }
     }
 
+    let res = eval(eq);
+
     mem.innerText = "";
-    output.innerText = eval(eq);
+    output.innerText = formatNum(res);
 
     return;
 

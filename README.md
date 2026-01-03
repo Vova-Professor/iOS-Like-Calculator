@@ -1,5 +1,5 @@
 # iOS-Like Calculator
-Version 1.0
+Version 1.1
 
 ## Description
 The project focuses on simplicity, modern design, and supports both basic and advanced calculator functions.
@@ -12,6 +12,4 @@ The project focuses on simplicity, modern design, and supports both basic and ad
 ---
 
 ## What's New?
-- Basic iOS-style interface.
-- Support for floating-point operations.
-- Performance optimizations and minor bug fixes.
+- Float point bug fixes
